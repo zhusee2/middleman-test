@@ -53,6 +53,12 @@ set :js_dir, 'js'
 
 set :images_dir, 'img'
 
+# Deploy-specific config
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
